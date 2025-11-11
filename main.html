@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الصفحة الرئيسية - مصر الرقمية</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{--orange1:#ff7e5f;--orange2:#feb47b;}
+  body {font-family:'Tajawal',sans-serif;background:#fdf6e3;color:#222;line-height:1.8;font-size:1.15rem;margin:0;padding-bottom:60px;}
+  header{background:linear-gradient(135deg,var(--orange1),var(--orange2));color:white;text-align:center;padding:36px 16px;border-bottom-left-radius:40px;border-bottom-right-radius:40px;position:sticky;top:0;z-index:50;}
+  .site-title{margin:0;font-size:2.2rem;font-weight:700;}
+  .site-names{margin:6px 0 0;font-size:1rem;font-weight:500;opacity:0.95;}
+  nav{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:14px;}
+  nav a{color:#fff;background:rgba(255,255,255,0.12);padding:10px 18px;border-radius:25px;text-decoration:none;margin:0 6px;display:inline-block;transition:all .25s ease;font-weight:600;}
+  nav a:hover{transform:translateY(-3px);background:rgba(255,255,255,0.22);}
+  nav a.active{background:linear-gradient(90deg,var(--orange1),var(--orange2));box-shadow:0 6px 18px rgba(0,0,0,0.18);transform:translateY(-2px);}
+  main{max-width:1100px;margin:28px auto;padding:0 18px;}
+  section{background:#fffdf5;border-radius:16px;padding:34px;margin:22px 0;box-shadow:0 8px 24px rgba(0,0,0,0.06);border-left:8px solid var(--orange1);}
+  h2{color:#d35400;margin-top:0;}
+  ul{padding-inline-start:24px;}
+  .image-container{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;margin-top:18px;}
+  .image-container img{width:320px;height:200px;border-radius:14px;object-fit:cover;box-shadow:0 6px 18px rgba(0,0,0,0.12);}
+  footer{text-align:center;padding:18px 8px;color:#444;font-size:0.95rem;}
+  /* Responsive tweaks */
+  @media (max-width:600px){ .site-title{font-size:1.6rem;} .image-container img{width:100%;height:auto;} nav a{padding:8px 12px;} }
+</style>
+</head>
+<body>
+<header>
+  <div class="site-title">مصر الرقمية</div>
+  <div class="site-names">جوني بشاي ودانيال بولص</div>
+  <nav id="main-nav">
+    <a href="main.html">الصفحة الرئيسية</a>
+    <a href="intro.html">مقدمة</a>
+    <a href="initiatives.html">المبادرات</a>
+    <a href="advantages.html">المميزات</a>
+    <a href="challenges.html">التحديات</a>
+    <a href="future.html">المستقبل</a>
+  </nav>
+</header>
+<main>
+
+<section id="main">
+  <h2>📖 الصفحة الرئيسية</h2>
+  <ul>
+    <li><strong><a href="intro.html">مقدمة:</a></strong> نظرة عامة على التحول الرقمي في مصر وأهدافه الرئيسية.</li>
+    <li><strong><a href="initiatives.html">المبادرات والمشروعات:</a></strong> أهم البرامج والمشروعات الحكومية لتطوير البنية الرقمية.</li>
+    <li><strong><a href="advantages.html">المميزات والفوائد:</a></strong> ما الذي يستفيده المواطن والمجتمع من التحول الرقمي.</li>
+    <li><strong><a href="challenges.html">التحديات والعقبات:</a></strong> أبرز الصعوبات التي تواجه مسيرة التحول الرقمي.</li>
+    <li><strong><a href="future.html">المستقبل الرقمي لمصر:</a></strong> رؤية مصر لبناء مجتمع رقمي متكامل.</li>
+  </ul>
+</section>
+
+</main>
+<footer>© مصمّم الموقع — جوني بشاي ودانيال بولص</footer>
+<script>
+// Highlight current nav link by comparing filenames
+(function(){
+  try {
+    const nav = document.getElementById('main-nav');
+    if(!nav) return;
+    const links = nav.querySelectorAll('a');
+    const current = location.pathname.split('/').pop() || 'main.html';
+    links.forEach(a => {
+      const href = a.getAttribute('href');
+      if(href === current) {
+        a.classList.add('active');
+      }
+    });
+  } catch(e) {
+    console.error(e);
+  }
+})();
+</script>
+</body>
+</html>
